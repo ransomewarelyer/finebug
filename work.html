@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finebug - Digital Solutions & Innovation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* (Previous CSS remains exactly the same until the end) */
+
+        /* Our Work Section */
+        .our-work {
+            background-color: var(--light);
+        }
+        
+        .work-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .work-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .work-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .work-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .work-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .work-item:hover .work-image img {
+            transform: scale(1.05);
+        }
+        
+        .work-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 61, 189, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .work-item:hover .work-overlay {
+            opacity: 1;
+        }
+        
+        .work-overlay a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .work-overlay a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .work-content {
+            padding: 20px;
+        }
+        
+        .work-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .work-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .work-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .work-tag {
+            background: var(--light-gray);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--dark);
+        }
+        
+        /* (Rest of the previous CSS remains exactly the same) */
+    </style>
+</head>
+<body>
+    <!-- (Previous HTML remains exactly the same until before the Why Choose Us section) -->
+
+    <!-- Our Work Section -->
+    <section class="our-work" id="our-work">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Work</h2>
+                <p>Explore our portfolio of successful projects and see what we can do for you.</p>
+            </div>
+            <div class="work-filter fade-in">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="marketing">Digital Marketing</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="work-container">
+                <div class="work-item fade-in" data-category="web">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" alt="E-commerce Website">
+                        <div class="work-overlay">
+                            <a href="https://www.atify.site" target="_blank" title="Live Preview"><i class="fas fa-eye"></i></a>
+                            <a href="https://www.atify.site" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Digital Commerce Platform</h3>
+                        <p>A fully responsive Clients website with Startup and Digital Marketing Services.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">ChatGpt</span>
+                            <span class="work-tag">HTML</span>
+                            <span class="work-tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item fade-in delay-1" data-category="marketing">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Digital Marketing">
+                        <div class="work-overlay">
+                            <a href="https://naiyaengineers.com" target="_blank" title="Live Preview"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="Case Study"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Digital Marketing Campaign</h3>
+                        <p>Comprehensive digital marketing strategy that increased client's revenue by 150%.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">SEO</span>
+                            <span class="work-tag">Social Media</span>
+                            <span class="work-tag">PPC</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item fade-in delay-2" data-category="design">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Brand Design">
+                        <div class="work-overlay">
+                            <a href="https://ksjw.site" target="_blank" title="Live Preview"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="View Details"><i class="fas fa-info-circle"></i></a>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Brand Identity Design</h3>
+                        <p>Complete brand identity package including logo, color scheme, and brand guidelines.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">Logo Design</span>
+                            <span class="work-tag">Branding</span>
+                            <span class="work-tag">Illustration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item fade-in" data-category="web">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business Website">
+                        <div class="work-overlay">
+                            <a href="https://lenscase.in" target="_blank" title="Live Preview"><i class="fas fa-eye"></i></a>
+                            <a href="https://lenscase.in" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Corporate Website</h3>
+                        <p>Modern and responsive corporate website with CMS integration.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">WordPress</span>
+                            <span class="work-tag">PHP</span>
+                            <span class="work-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item fade-in delay-1" data-category="marketing">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SEO Project">
+                        <div class="work-overlay">
+                            <a href="https://sipnovations.com" target="_blank" title="Live Preview"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="Case Study"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3>SEO Optimization</h3>
+                        <p>SEO strategy that improved organic traffic by 300% in 6 months.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">SEO</span>
+                            <span class="work-tag">Content Strategy</span>
+                            <span class="work-tag">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-item fade-in delay-2" data-category="design">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mobile App Design">
+                        <div class="work-overlay">
+                            <a href="http://www.hvacusa.site" target="_blank" title="Live Preview"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="View Details"><i class="fas fa-info-circle"></i></a>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <h3>Mobile App UI/UX</h3>
+                        <p>User-centered mobile app design with intuitive navigation and modern aesthetics.</p>
+                        <div class="work-tags">
+                            <span class="work-tag">UI/UX</span>
+                            <span class="work-tag">Figma</span>
+                            <span class="work-tag">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- (Rest of the previous HTML remains exactly the same) -->
+
+    <script>
+        // (Previous JavaScript remains exactly the same until the end)
+
+        // Work Filter Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const workItems = document.querySelectorAll('.work-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                workItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // (Rest of the previous JavaScript remains exactly the same)
+    </script>
+</body>
+</html>
